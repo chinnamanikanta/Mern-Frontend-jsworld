@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+.srv-validation-message {
+  color: tomato;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3d464d;
+  border-radius: 50%;
+  width: 1em;
+  height: 3em;
+  margin: auto;
+
+  animation: spin 2s linear infinite;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-form {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+.form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid var(--clr-grey-8);
+  max-width: 600px;
+  background: transparent;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--clr-grey-3);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+  margin-top: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.btn-container {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-container p {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.btn-container button {
+  margin: 1rem;
+  padding: 0.25rem 0.5rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  border-color: transparent;
+  background: var(--clr-primary-5);
+  border-radius: var(--radius);
+  color: var(--clr-white);
+  letter-spacing: var(--spacing);
+  cursor: pointer;
+}
+.btn-container button:disabled {
+  cursor: not-allowed;
+}
+
+.stories {
+  width: 90vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-bottom: 5rem;
+  display: grid;
+  gap: 2rem;
+}
+@media screen and (min-width: 992px) {
+  .stories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* align-items: start; */
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.story {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 1rem 2rem;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+.info {
+  margin-bottom: 0.5rem;
+  color: var(--clr-grey-5);
 }
 
-@keyframes App-logo-spin {
-  from {
+.read-link {
+  font-size: 0.85rem;
+  margin-right: 0.75rem;
+  text-transform: capitalize;
+  color: var(--clr-primary-5);
+}
+
+.remove-btn {
+  background: transparent;
+  color: var(--clr-red-dark);
+  border-color: transparent;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 0.85rem;
+}
+
+.book-card {
+  border-radius: var(--mainBorderRadius);
+  transition: transform 0.5s;
+}
+.book-card:hover {
+  box-shadow: var(--darkShadow);
+  transform: translateX(-5px);
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
